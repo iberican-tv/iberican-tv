@@ -1,0 +1,172 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+---
+<BaseLayout title="Iberican - Rap Hardcore y Estética Urbana">
+  <!-- HERO -->
+  <section class="relative pt-20 pb-12 text-center overflow-hidden">
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover z-0">
+      <source src="/video/hero.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 z-5 neon-bg"></div>
+    <div class="absolute inset-0 bg-black/50 z-10"></div>
+    <div class="relative z-20 max-w-6xl mx-auto px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in glitch" data-text="Enciende la escena: Iberican">
+        Enciende la escena: <span class="text-primary">Iberican</span>
+      </h1>
+      <p class="text-lg md:text-xl text-red-400 max-w-3xl mx-auto mb-8 animate-slide-up font-bold tracking-wide" data-text='"La música que NO QUIEREN que escuches"'>
+        "La música que <span class="text-red-600 animate-pulse">NO QUIEREN</span> que escuches"
+      </p>
+      <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 animate-slide-up">
+        Rap hardcore y estética urbana. Proyectos con Dj Figu, Dj Maos y más. Música cruda, beats contundentes y colaboraciones underground.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-bounce-in">
+        <a href="/trabajos" class="btn-primary inline-flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="4" width="2" height="8" fill="currentColor"/>
+            <rect x="6" y="2" width="2" height="12" fill="currentColor"/>
+            <rect x="10" y="6" width="2" height="4" fill="currentColor"/>
+          </svg>
+          Ver trabajos
+        </a>
+        <a href="/contacto" class="inline-flex items-center justify-center bg-transparent border border-white/20 hover:border-white text-white/90 py-3 px-6 rounded-lg transition gap-2">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 4h12v8H2z" fill="currentColor"/>
+            <path d="M2 4l6 4 6-4" stroke="currentColor" stroke-width="1"/>
+          </svg>
+          Contactar
+        </a>
+      </div>
+      <button id="mute-toggle" class="mt-4 text-white/70 hover:text-white">🔊 Mute</button>
+
+      <!-- TURNTABLE PLAYER -->
+      <div class="mt-8 card text-center max-w-md mx-auto">
+        <h3 class="text-xl font-black mb-2 uppercase tracking-wider">TURNPLAY</h3>
+        <div class="turntable relative mx-auto w-64 h-64 mb-4">
+          <div class="record spinning absolute inset-0 rounded-full bg-gradient-radial from-neutral-800 via-neutral-700 to-neutral-900 border-8 border-neutral-500 flex items-center justify-center shadow-2xl" style="background: radial-gradient(circle, #1f2937 0%, #374151 50%, #111827 100%);">
+            <img src="/ibericanlogosinfondo.png" alt="Iberican Logo" class="w-40 h-40 rounded-full object-cover">
+          </div>
+        </div>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7AKHj2M6Q5trISeyHvkQTm?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+
+      <!-- Particles -->
+      <div class="particles absolute inset-0 pointer-events-none z-15">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 grid gap-8 sm:grid-cols-3">
+      <div class="card text-center">
+        <img src="/ibericanlogosinfondo.png" alt="Iberican Logo" class="w-16 h-16 mx-auto mb-4">
+        <h3 class="text-xl font-bold mb-2">Último Lanzamiento</h3>
+        <p class="text-gray-300 text-sm">"Ocho Caras" (2025) con Dj Figu</p>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6NyIbfDZSMMduPG5IcTezJ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+      <div class="card text-center">
+        <h3 class="text-xl font-bold mb-2">Estilo Urbano</h3>
+        <p class="text-gray-300 text-sm mb-4">Rap hardcore, beats contundentes, samples clásicos y letras afiladas. Influenciado por el underground madrileño.</p>
+        <ul class="text-left space-y-1 text-sm">
+          <li>• Producción cruda y directa</li>
+          <li>• Temas sociales y políticos</li>
+          <li>• Colaboraciones con Dj's innovadores</li>
+        </ul>
+      </div>
+      <div class="card text-center">
+        <h3 class="text-xl font-bold mb-2">Trabajos Destacados</h3>
+        <ul class="text-left space-y-2">
+          <li><strong>"Evolute Goals" (2023)</strong> con Dj Figu</li>
+          <li><strong>"7 Caras" (2022)</strong> con Dj Maos</li>
+          <li><strong>Próximamente: "Espada"</strong> con Dj Figu</li>
+        </ul>
+        <a href="/trabajos" class="btn-primary mt-4 inline-block inline-flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="4" width="2" height="8" fill="currentColor"/>
+            <rect x="6" y="2" width="2" height="12" fill="currentColor"/>
+            <rect x="10" y="6" width="2" height="4" fill="currentColor"/>
+          </svg>
+          Ver Todos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLABORADORES DESTACADOS -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Colaboradores Destacados</h2>
+        <a href="/trabajos" class="text-sm font-semibold text-primary hover:text-secondary transition">Ver trabajos</a>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <article class="card group hover-card">
+          <img src="/ibericanlogosinfondo.png" alt="Iberican Logo" class="w-16 h-16 mb-4 opacity-75">
+          <div class="p-5">
+            <h3 class="font-bold text-xl mb-1">Dj Figu</h3>
+            <p class="text-sm">Productor y colaborador en "Ocho Caras", "Evolute Goals" y próximamente "Espada". Beats contundentes y producción underground.</p>
+          </div>
+        </article>
+
+        <article class="card group hover-card">
+          <img src="/ibericanlogosinfondo.png" alt="Iberican Logo" class="w-16 h-16 mb-4 opacity-75">
+          <div class="p-5">
+            <h3 class="font-bold text-xl mb-1">Dj Maos</h3>
+            <p class="text-sm">Colaborador en "7 Caras". Experimentos sonoros futuristas y estética urbana avanzada.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA CONTACTO -->
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 rounded-lg bg-gradient-to-r from-neutral-900 via-red-900 to-neutral-900 p-8 shadow-2xl border-2 border-red-800 text-white">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-2xl font-black uppercase tracking-wider">¿Hacemos una colabo?</h3>
+          <p class="text-gray-300/90">Hablemos y lo hacemos realidad. Producción, video y dirección creativa.</p>
+        </div>
+        <a href="/contacto" class="btn-primary inline-flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 4h12v8H2z" fill="currentColor"/>
+            <path d="M2 4l6 4 6-4" stroke="currentColor" stroke-width="1"/>
+          </svg>
+          Contactar
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const video = document.querySelector('video');
+    const muteBtn = document.getElementById('mute-toggle');
+    muteBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      muteBtn.textContent = video.muted ? '🔊 Mute' : '🔇 Unmute';
+    });
+
+    // Turntable - removed audio control, iframe handles it
+    // const audio = document.getElementById('turntable-audio');
+    // const record = document.querySelector('.record');
+    // audio.addEventListener('play', () => {
+    //   record.classList.add('spinning');
+    // });
+    // audio.addEventListener('pause', () => {
+    //   record.classList.remove('spinning');
+    // });
+  </script>
+</BaseLayout>

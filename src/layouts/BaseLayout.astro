@@ -1,0 +1,30 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+const { title = "Iberican" } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="icon" type="image/png" href="/logoarriba_I.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Bebas+Neue&family=Oswald:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+      :root { --ui-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; --heading-font: 'Poppins', var(--ui-font); }
+      body { font-family: var(--ui-font); }
+      h1, h2, h3, h4 { font-family: var(--heading-font); }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main class="px-6 py-8">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

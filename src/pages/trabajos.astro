@@ -1,0 +1,322 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Trabajos de Iberican">
+  <!-- Spacer para header fixed (evita que pise la página) 
+  <div class="h-18"></div>-->
+  <!-- HEADER / INTRO -->
+  <section class="max-w-7xl mx-auto px-4">
+    <div class="text-center pt-14 pb-8">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-black/30 backdrop-blur mb-6">
+        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+        <span class="text-white/80 text-sm tracking-wide">Discografía • Proyectos • Colaboraciones</span>
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 glitch" data-text="Discografía & Proyectos">
+        Discografía & <span class="text-primary">Proyectos</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto">
+        Aquí están los trabajos que han ido marcando el camino: rap hardcore, mensaje y dirección sonora sin concesiones.
+        Cada proyecto tiene su clima, su intención y su golpe. Entra, escucha y decide.
+      </p>
+
+      <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://www.instagram.com/iberican__?igsh=bm93ZzdwY3djd2Q3" target="_blank" rel="noopener"
+          class="btn-primary inline-flex items-center justify-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 1.8h5A3.7 3.7 0 0 1 14.2 5.5v5a3.7 3.7 0 0 1-3.7 3.7h-5A3.7 3.7 0 0 1 1.8 10.5v-5A3.7 3.7 0 0 1 5.5 1.8Z" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M8 6.2A1.8 1.8 0 1 0 8 9.8a1.8 1.8 0 0 0 0-3.6Z" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M11.8 4.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Seguir en Instagram
+        </a>
+
+        <a href="/sobre"
+          class="inline-flex items-center justify-center bg-transparent border border-white/20 hover:border-white text-white/90 py-3 px-6 rounded-lg transition gap-2">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 1.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 8 1.8Z" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M8 5.6v4.6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M8 4.2h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Conocer el proyecto
+        </a>
+      </div>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="pb-6">
+      <div class="mb-4 flex flex-wrap justify-center gap-3">
+        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="all">Todos</button>
+        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="crudo">Crudo</button>
+        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="post-industrial">Post-Industrial</button>
+        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="futurista">Futurista</button>
+        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="proximamente">Próximamente</button>
+      </div>
+
+      <p class="text-center text-sm text-white/60">
+        Filtra por clima. Si quieres entrar a cuchillo: “Crudo”. Si quieres atmósfera y tensión: “Post-Industrial”.
+        Si quieres exploración: “Futurista”. Si quieres lo que viene: “Próximamente”.
+      </p>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mt-8 trabajos-grid pb-16">
+      <!-- 8 CARAS -->
+      <div class="card hover-card group cursor-pointer" data-category="crudo">
+        <div class="flex items-center justify-between gap-3 mb-3">
+          <div class="flex items-center gap-3">
+            <img src="/ibericanlogosinfondo.png" alt="Iberican Logo" class="w-8 h-8 opacity-75">
+            <div class="text-left">
+              <p class="text-xs uppercase tracking-wider text-white/60">Álbum</p>
+              <p class="text-xs text-white/60">2025 • con DJ Figu</p>
+            </div>
+          </div>
+          <span class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-black/20 text-xs text-white/70 uppercase tracking-wider">
+            Crudo
+          </span>
+        </div>
+
+        <h2 class="text-2xl font-semibold mb-2">"Ocho Caras"</h2>
+
+        <p class="mt-2 text-sm mb-4 text-gray-300">
+          Rap sólido y reflexivo: intención en cada barra. Samples clásicos, beats contundentes y un hilo narrativo cerrado.
+        </p>
+
+        <ul class="text-left space-y-1 text-sm text-white/70">
+          <li>• Mensaje sin concesiones</li>
+          <li>• Dirección sonora: “El Profesor”</li>
+          <li>• Energía de calle, escucha obligatoria</li>
+        </ul>
+
+        <button class="btn-primary ver-mas-btn mt-4 inline-flex items-center gap-2" data-target="ocho">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Ver más
+        </button>
+
+        <div id="ocho" class="expanded-info hidden mt-4">
+          <div class="bg-black/20 border border-white/10 rounded-lg p-4">
+            <p class="text-sm text-gray-300 mb-3">
+              Detalles: Producido en Madrid, enfoque underground y samples con carácter. Un disco para escucharlo entero.
+            </p>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6NyIbfDZSMMduPG5IcTezJ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <p class="text-xs text-white/60 mt-3">
+              Consejo: dale una escucha con cascos y sin prisas. Aquí hay capas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- EVOLUTE GOALS -->
+      <div class="card hover-card group cursor-pointer" data-category="post-industrial">
+        <div class="flex items-center justify-between gap-3 mb-3">
+          <div class="flex items-center gap-3">
+            <img src="/ibericanlogosinfondo.png" alt="Iberican Logo" class="w-8 h-8 opacity-75">
+            <div class="text-left">
+              <p class="text-xs uppercase tracking-wider text-white/60">Proyecto</p>
+              <p class="text-xs text-white/60">2023 • con DJ Figu</p>
+            </div>
+          </div>
+          <span class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-black/20 text-xs text-white/70 uppercase tracking-wider">
+            Post-Industrial
+          </span>
+        </div>
+
+        <h2 class="text-2xl font-semibold mb-2">"Evolute Goals"</h2>
+
+        <p class="mt-2 text-sm mb-4 text-gray-300">
+          Manifiesto político y social. Directo, afilado y sin maquillaje. Aquí el mensaje no se negocia.
+        </p>
+
+        <ul class="text-left space-y-1 text-sm text-white/70">
+          <li>• Letras con carga y visión</li>
+          <li>• Beat duro, atmósfera tensa</li>
+          <li>• Underground con intención</li>
+        </ul>
+
+        <button class="btn-primary ver-mas-btn mt-4 inline-flex items-center gap-2" data-target="evolute">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Ver más
+        </button>
+
+        <div id="evolute" class="expanded-info hidden mt-4">
+          <div class="bg-black/20 border border-white/10 rounded-lg p-4">
+            <p class="text-sm text-gray-300 mb-3">
+              Detalles: Grabado en circuito underground, inspirado en tensión social y contraste urbano.
+            </p>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4xr5d4tWnOFTVDeEb8zBk7?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <p class="text-xs text-white/60 mt-3">
+              Si te gusta el rap con “dientes”, este es el tuyo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 CARAS -->
+      <div class="card hover-card group cursor-pointer" data-category="futurista">
+        <div class="flex items-center justify-between gap-3 mb-3">
+          <div class="flex items-center gap-3">
+            <img src="/ibericanlogosinfondo.png" alt="Iberican Logo" class="w-8 h-8 opacity-75">
+            <div class="text-left">
+              <p class="text-xs uppercase tracking-wider text-white/60">Álbum</p>
+              <p class="text-xs text-white/60">2022 • con DJ Maos</p>
+            </div>
+          </div>
+          <span class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-black/20 text-xs text-white/70 uppercase tracking-wider">
+            Futurista
+          </span>
+        </div>
+
+        <h2 class="text-2xl font-semibold mb-2">"7 Caras"</h2>
+
+        <p class="mt-2 text-sm mb-4 text-gray-300">
+          Proyecto experimental. Sonidos urbanos con estética futurista, cortes raros y texturas distintas.
+        </p>
+
+        <ul class="text-left space-y-1 text-sm text-white/70">
+          <li>• Exploración sonora</li>
+          <li>• Atmósfera y riesgo</li>
+          <li>• Identidad urbana</li>
+        </ul>
+
+        <button class="btn-primary ver-mas-btn mt-4 inline-flex items-center gap-2" data-target="sietecaras">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Ver más
+        </button>
+
+        <div id="sietecaras" class="expanded-info hidden mt-4">
+          <div class="bg-black/20 border border-white/10 rounded-lg p-4">
+            <p class="text-sm text-gray-300 mb-3">
+              Detalles: con DJ Maos, buscando un lenguaje distinto sin perder la calle.
+            </p>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/09bwWNr2AlfwTSbo2qDL99?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <p class="text-xs text-white/60 mt-3">
+              Si quieres ver a Iberican fuera de zona cómoda, entra aquí.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROX -->
+      <div class="card hover-card group cursor-pointer" data-category="proximamente">
+        <div class="flex items-center justify-between gap-3 mb-3">
+          <div class="flex items-center gap-3">
+            <img src="/ibericanlogosinfondo.png" alt="Iberican Logo" class="w-8 h-8 opacity-75">
+            <div class="text-left">
+              <p class="text-xs uppercase tracking-wider text-white/60">Próximamente</p>
+              <p class="text-xs text-white/60">2026</p>
+            </div>
+          </div>
+          <span class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-black/20 text-xs text-white/70 uppercase tracking-wider">
+            En marcha
+          </span>
+        </div>
+
+        <h2 class="text-2xl font-semibold mb-2">"Espada"</h2>
+
+        <p class="mt-2 text-sm mb-4 text-gray-300">
+          Un trabajo distinto que va a sorprender por el enfoque y el sonido. Sin spoilers: cuando salga, se entiende.
+        </p>
+
+        <ul class="text-left space-y-1 text-sm text-white/70">
+          <li>• Nueva dirección</li>
+          <li>• Beats intensos</li>
+          <li>• Lanzamiento 2026</li>
+        </ul>
+
+        <button class="btn-primary ver-mas-btn mt-4 inline-flex items-center gap-2" data-target="espada">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Ver más
+        </button>
+
+        <div id="espada" class="expanded-info hidden mt-4">
+          <div class="bg-black/20 border border-white/10 rounded-lg p-4">
+            <p class="text-sm text-gray-300 mb-2">
+              Próximo lanzamiento: “Espada” con DJ Figu. Enfoque nuevo, sonido distinto, misma actitud.
+            </p>
+            <p class="text-sm text-gray-300">
+              Más colaboraciones y material en camino. Si quieres enterarte antes: síguelo en IG.
+            </p>
+            <a href="https://www.instagram.com/iberican__?igsh=bm93ZzdwY3djd2Q3" target="_blank" rel="noopener" class="btn-primary mt-4 inline-flex items-center gap-2">
+              Seguir / Updates
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 3h7v7" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M13 3L3 13" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Expandir/ver más (mantiene el texto con icono)
+    document.querySelectorAll('[data-target]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetId = btn.dataset.target;
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        const isHidden = target.classList.contains('hidden');
+        target.classList.toggle('hidden');
+
+        // Re-pintar contenido del botón sin romper icono
+        btn.innerHTML = isHidden
+          ? `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10l4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Ver menos`
+          : `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Ver más`;
+
+        playSound('/audio/click.mp3');
+      });
+    });
+
+    // Filtros por categoría
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const cards = document.querySelectorAll('.trabajos-grid [data-category]');
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        cards.forEach((card) => {
+          const cat = card.dataset.category;
+          const show = filter === 'all' || cat === filter;
+          card.style.display = show ? '' : 'none';
+        });
+
+        playSound('/audio/click.mp3');
+      });
+    });
+
+    // Hover cards (sin tocar CSS global)
+    document.querySelectorAll('.hover-card').forEach((card) => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px) rotate(1deg)';
+        card.style.boxShadow = '0 20px 40px rgba(30, 64, 175, 0.3)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) rotate(0deg)';
+        card.style.boxShadow = '';
+      });
+    });
+
+    // Sonido sutil
+    function playSound(src) {
+      try {
+        const audio = new Audio(src);
+        audio.volume = 0.25;
+        audio.play();
+      } catch (e) {}
+    }
+  </script>
+</BaseLayout>
