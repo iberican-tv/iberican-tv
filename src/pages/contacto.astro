@@ -1,13 +1,55 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CategoryTags from "../components/CategoryTags.astro";
 ---
 
+<style>
+  .heartbeat-hardcore {
+    position: relative;
+    display: inline-block;
+    animation: impact-shock 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  }
+
+  @keyframes impact-shock {
+    0% {
+      transform: translateX(0) scaleY(1);
+      filter: drop-shadow(0 0 8px rgba(255, 53, 53, 0.4)) brightness(1);
+    }
+    8% {
+      transform: translateX(-3px) scaleY(1.05);
+      filter: drop-shadow(0 0 20px rgba(255, 53, 53, 0.9)) brightness(1.2);
+    }
+    16% {
+      transform: translateX(4px) scaleY(0.98);
+      filter: drop-shadow(0 0 18px rgba(255, 53, 53, 0.8)) brightness(1.1);
+    }
+    24% {
+      transform: translateX(-2px) scaleY(1.03);
+      filter: drop-shadow(0 0 15px rgba(255, 53, 53, 0.7)) brightness(1.05);
+    }
+    32% {
+      transform: translateX(0) scaleY(1);
+      filter: drop-shadow(0 0 10px rgba(255, 53, 53, 0.5)) brightness(1);
+    }
+    100% {
+      transform: translateX(0) scaleY(1);
+      filter: drop-shadow(0 0 6px rgba(255, 53, 53, 0.25)) brightness(1);
+    }
+  }
+</style>
+
 <BaseLayout title="Contacto - Iberican">
-  <!-- Spacer para header fixed (evita que pise la página) -->
-  <div class="h-18"></div>
-  <section class="text-center max-w-6xl mx-auto px-4">
-    <h1 class="text-4xl font-extrabold mb-8">Contacto Profesional</h1>
-    <p class="text-lg mb-10 text-neutral-300">Para colaboraciones, bookings, prensa o consultas. Mantengamos el underground vivo.</p>
+  <!-- HEADER / INTRO -->
+  <section class="max-w-7xl mx-auto px-4">
+    <div class="text-center pt-14 pb-8">
+      <div class="mb-6 flex justify-center">
+        <CategoryTags tags={["Contacto", "Colaboraciones", "Profesional"]} />
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4" data-text="Contacto Profesional">
+        Contacto <span class="text-primary">Profesional</span>
+      </h1>
+      <p class="text-lg mb-10 text-neutral-300">Para colaboraciones, bookings, prensa o consultas. Mantengamos el underground vivo.</p>
 
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-12">
       <a href="https://open.spotify.com/intl-es/album/6NyIbfDZSMMduPG5IcTezJ" target="_blank" class="card hover-card group text-center p-6">

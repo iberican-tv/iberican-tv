@@ -1,0 +1,18 @@
+---
+interface Props {
+  tags?: string[];
+}
+
+const { tags = ["Rap Hardcore", "Underground", "Mensaje"] } = Astro.props;
+---
+
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-black/30 backdrop-blur">
+  <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+  <span class="text-white/80 text-sm tracking-wide">
+    {tags.join(" • ")}
+  </span>
+</div>
+
+<style>
+  /* Los estilos están en el componente mismo */
+</style>

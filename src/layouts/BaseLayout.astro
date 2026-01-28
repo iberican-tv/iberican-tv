@@ -21,10 +21,55 @@ const { title = "Iberican" } = Astro.props;
     </style>
   </head>
   <body>
+    <div id="custom-cursor"></div>
     <Header />
-    <main class="px-6 py-8">
+    <main class="px-6 py-8 pt-32">
       <slot />
     </main>
     <Footer />
+    
+    <style>
+      * {
+        cursor: none !important;
+      }
+      
+      @keyframes sword-glow {
+        0%, 100% {
+          filter: brightness(1.4) drop-shadow(0 0 15px rgba(220, 38, 38, 0.8)) drop-shadow(0 0 30px rgba(220, 38, 38, 0.6));
+        }
+        50% {
+          filter: brightness(1.6) drop-shadow(0 0 25px rgba(220, 38, 38, 1)) drop-shadow(0 0 40px rgba(220, 38, 38, 0.8)) drop-shadow(0 0 50px rgba(220, 38, 38, 0.5));
+        }
+      }
+      
+      #custom-cursor {
+        position: fixed;
+        width: 350px;
+        height: 80px;
+        background-image: url('/espada_cursor_inclinada.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right center;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-85%, -50%);
+        display: none;
+        animation: sword-glow 2s ease-in-out infinite;
+      }
+    </style>
+    
+    <script>
+      const customCursor = document.getElementById('custom-cursor');
+      
+      document.addEventListener('mousemove', (e) => {
+        customCursor.style.display = 'block';
+        customCursor.style.left = e.clientX + 'px';
+        customCursor.style.top = e.clientY + 'px';
+      });
+      
+      document.addEventListener('mouseleave', () => {
+        customCursor.style.display = 'none';
+      });
+    </script>
   </body>
 </html>

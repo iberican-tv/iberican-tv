@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 63">
+  <rect width="63" height="63" fill="black" rx="10"/>
+  <path d="M15 20h33v23H15z" fill="none" stroke="white" stroke-width="2"/>
+  <path d="M24 27l15 8.5-15 8.5v-17z" fill="white"/>
+  <text x="31.5" y="50" text-anchor="middle" fill="white" font-size="8" font-weight="bold">MUSIC</text>
+</svg>

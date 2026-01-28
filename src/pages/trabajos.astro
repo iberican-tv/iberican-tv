@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CategoryTags from "../components/CategoryTags.astro";
 ---
 
 <BaseLayout title="Trabajos de Iberican">
@@ -8,15 +9,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- HEADER / INTRO -->
   <section class="max-w-7xl mx-auto px-4">
     <div class="text-center pt-14 pb-8">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-black/30 backdrop-blur mb-6">
-        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-        <span class="text-white/80 text-sm tracking-wide">Discografía • Proyectos • Colaboraciones</span>
+      <div class="mb-6 flex justify-center">
+        <CategoryTags tags={["Discografía", "Proyectos", "Colaboraciones"]} />
       </div>
 
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 glitch" data-text="Discografía & Proyectos">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in heartbeat-hardcore" data-text="Discografía & Proyectos">
         Discografía & <span class="text-primary">Proyectos</span>
       </h1>
-
       <p class="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto">
         Aquí están los trabajos que han ido marcando el camino: rap hardcore, mensaje y dirección sonora sin concesiones.
         Cada proyecto tiene su clima, su intención y su golpe. Entra, escucha y decide.
@@ -48,11 +47,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <!-- FILTROS -->
     <div class="pb-6">
       <div class="mb-4 flex flex-wrap justify-center gap-3">
-        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="all">Todos</button>
-        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="crudo">Crudo</button>
-        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="post-industrial">Post-Industrial</button>
+        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="all">ALL</button>
+        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="crudo">HARDCORE</button>
+        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="post-industrial">OLD SCHOOL</button>
         <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="futurista">Futurista</button>
-        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="proximamente">Próximamente</button>
+        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="proximamente">NEXT</button>
       </div>
 
       <p class="text-center text-sm text-white/60">
@@ -67,7 +66,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="card hover-card group cursor-pointer" data-category="crudo">
         <div class="flex items-center justify-between gap-3 mb-3">
           <div class="flex items-center gap-3">
-            <img src="/ibericanlogosinfondo.png" alt="Iberican Logo" class="w-8 h-8 opacity-75">
             <div class="text-left">
               <p class="text-xs uppercase tracking-wider text-white/60">Álbum</p>
               <p class="text-xs text-white/60">2025 • con DJ Figu</p>
@@ -87,7 +85,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <ul class="text-left space-y-1 text-sm text-white/70">
           <li>• Mensaje sin concesiones</li>
           <li>• Dirección sonora: “El Profesor”</li>
-          <li>• Energía de calle, escucha obligatoria</li>
+          <li>• Escucha obligatoria</li>
         </ul>
 
         <button class="btn-primary ver-mas-btn mt-4 inline-flex items-center gap-2" data-target="ocho">
@@ -114,7 +112,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="card hover-card group cursor-pointer" data-category="post-industrial">
         <div class="flex items-center justify-between gap-3 mb-3">
           <div class="flex items-center gap-3">
-            <img src="/ibericanlogosinfondo.png" alt="Iberican Logo" class="w-8 h-8 opacity-75">
             <div class="text-left">
               <p class="text-xs uppercase tracking-wider text-white/60">Proyecto</p>
               <p class="text-xs text-white/60">2023 • con DJ Figu</p>
@@ -161,7 +158,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="card hover-card group cursor-pointer" data-category="futurista">
         <div class="flex items-center justify-between gap-3 mb-3">
           <div class="flex items-center gap-3">
-            <img src="/ibericanlogosinfondo.png" alt="Iberican Logo" class="w-8 h-8 opacity-75">
             <div class="text-left">
               <p class="text-xs uppercase tracking-wider text-white/60">Álbum</p>
               <p class="text-xs text-white/60">2022 • con DJ Maos</p>
@@ -208,7 +204,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="card hover-card group cursor-pointer" data-category="proximamente">
         <div class="flex items-center justify-between gap-3 mb-3">
           <div class="flex items-center gap-3">
-            <img src="/ibericanlogosinfondo.png" alt="Iberican Logo" class="w-8 h-8 opacity-75">
             <div class="text-left">
               <p class="text-xs uppercase tracking-wider text-white/60">Próximamente</p>
               <p class="text-xs text-white/60">2026</p>

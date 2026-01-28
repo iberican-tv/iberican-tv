@@ -1,6 +1,5 @@
 ---
 const navItems = [
-  { name: "Inicio", href: "/" },
   { name: "Iberican", href: "/iberican" },
   { name: "Trabajos", href: "/trabajos" },
   { name: "Contacto", href: "/contacto" },
@@ -10,168 +9,134 @@ const path = Astro.url?.pathname ?? "/";
 const isActive = (href) => (href === "/" ? path === "/" : path.startsWith(href));
 ---
 
-<header class="fixed inset-x-0 top-0 z-50">
-  <div class="bg-black/80 border-b border-white/10 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between relative">
+<header class="fixed top-0 inset-x-0 z-50 bg-black text-white border-b border-white/20 shadow">
+  <div class="max-w-7xl mx-auto px-6 h-28 flex justify-between items-center relative">
 
-      <!-- Logo (left) -->
-      <a href="/" class="flex items-center gap-3 shrink-0 z-20" aria-label="Inicio">
-        <img src="/logoarriba_b.png" alt="Iberican Logo" class="w-10 h-10 object-contain" />
+    <!-- Logo (left) -->
+    <a href="/" aria-label="Inicio" class="flex items-center shrink-0 z-20">
+      <img src="/ibericanEspadaSinFondo.png" alt="Iberican TV" class="w-48 h-auto object-contain select-none">
+    </a>
+
+    <!-- Nav Desktop (centered) -->
+    <nav class="hidden md:flex items-center gap-8 text-base font-bold uppercase tracking-wide absolute left-1/2 -translate-x-1/2 z-10" aria-label="Navegación principal">
+      {navItems.map((item) => (
+        <a 
+          href={item.href}
+          class:list={[
+            "relative pb-1 transition",
+            isActive(item.href) ? "text-white" : "text-white/70 hover:text-white"
+          ]}
+          aria-current={isActive(item.href) ? "page" : undefined}
+        >
+          <span>{item.name}</span>
+          <span class:list={[
+            "absolute left-0 -bottom-0.5 h-[1px] w-full bg-white transition-transform duration-300 origin-left",
+            isActive(item.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+          ]}></span>
+        </a>
+      ))}
+    </nav>
+
+    <!-- Actions (right) -->
+    <div class="flex items-center gap-3 z-20">
+
+      <!-- Vinilo (Trabajos / Música) 
+      <a
+        href="/trabajos"
+        class="p-2 rounded-full hover:bg-white/10 transition"
+        aria-label="Trabajos"
+        aria-current={isActive("/trabajos") ? "page" : undefined}
+      >
+        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.2" opacity="0.35"/>
+          <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.9"/>
+          <circle cx="12" cy="12" r="0.6" fill="black" opacity="0.6"/>
+        </svg>
+      </a>-->
+
+      <!-- Contacto 
+      <a
+        href="/contacto"
+        class="p-2 rounded-full hover:bg-white/10 transition"
+        aria-label="Contacto"
+        aria-current={isActive("/contacto") ? "page" : undefined}
+      >
+        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </a>-->
+
+      <!-- YouTube -->
+      <a
+        href="https://www.youtube.com/channel/UCROsxigRlpA9KrU1KU48vDw"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-2 rounded-full hover:bg-white/10 transition"
+        aria-label="YouTube"
+      >
+        <svg class="w-6 h-6 text-white hover:text-[#FF0000] transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M23.498 6.186a2.997 2.997 0 0 0-2.104-2.11C19.564 3.5 12 3.5 12 3.5s-7.564 0-9.394.576A2.997 2.997 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.997 2.997 0 0 0 2.104 2.11c1.83.576 9.394.576 9.394.576s7.564 0 9.394-.576a2.997 2.997 0 0 0 2.104-2.11C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
       </a>
 
-      <!-- Nav (centered absolute, desktop) -->
-      <nav
-        class="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
-        aria-label="Navegación principal"
+      <!-- Spotify -->
+      <a
+        href="https://open.spotify.com/artist/4xG7KfQEo8nQZlLpGYX76G"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-2 rounded-full hover:bg-white/10 transition"
+        aria-label="Spotify"
       >
-        <ul class="flex items-center gap-8 text-sm font-semibold text-white/90">
-          {navItems.map((item) => (
-            <li class="group">
-              <a
-                href={item.href}
-                class="relative py-2"
-                aria-current={isActive(item.href) ? "page" : undefined}
-              >
-                <span class:list={[
-                  "transition-colors duration-200",
-                  isActive(item.href) ? "text-white" : "text-white/85 group-hover:text-white"
-                ]}>
-                  {item.name}
-                </span>
+        <svg class="w-6 h-6 text-white hover:text-[#1DB954] transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.562 8.161c-.18.717-.962 1.206-1.84 1.195-1.84-.018-3.666.015-5.506-.063-.197-.009-.429-.22-.501-.412-.074-.195-.074-.462 0-.656.074-.196.317-.351.542-.354 1.84-.018 3.666.054 5.506.036.2-.009.43.22.501.412.074.194.074.462 0 .656zm1.198 3.578c-.228.909-1.146 1.604-2.28 1.607-2.28.018-4.548.036-6.828 0-.3-.009-.636-.3-.708-.6-.074-.3-.074-.684 0-.984.074-.3.408-.591.708-.6 2.28-.018 4.548-.036 6.828 0 .3.009.636.3.708.6.074.3.074.684 0 .984zm.636 3.766c-.27 1.084-1.368 1.909-2.52 1.909-2.52 0-5.04-.036-7.56-.054-.36-.009-.72-.36-.792-.72-.072-.36-.072-.792 0-1.152.072-.36.432-.711.792-.72 2.52-.018 5.04-.036 7.56 0 .36.009.72.36.792.72.072.36.072.792 0 1.152z"/>
+        </svg>
+      </a>
 
-                <span class:list={[
-                  "absolute left-0 right-0 -bottom-1 h-0.5 origin-left transition-transform duration-300 transform",
-                  isActive(item.href)
-                    ? "scale-x-100 bg-gradient-to-r from-red-500 to-red-700"
-                    : "scale-x-0 bg-white group-hover:scale-x-100"
-                ]}></span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <!-- Apple Music -->
+      <a
+        href="https://music.apple.com/es/artist/iberican/1846584402"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-2 rounded-full hover:bg-white/10 transition"
+        aria-label="Apple Music"
+      >
+        <svg class="w-6 h-6 text-white hover:text-[#FC3C44] transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+      </a>
 
-      <!-- Actions (right) -->
-      <div class="flex items-center gap-3 shrink-0 z-20">
-
-        <!-- Modo Iberican -->
-        <button
-          id="neon-toggle"
-          type="button"
-          class="hidden sm:inline-flex items-center gap-2 px-4 h-9 rounded-full bg-white/10 hover:bg-white/15 border border-white/10 text-white/80 transition"
-          aria-label="Modo Iberican"
-        >
-          <span aria-hidden="true">🔮</span>
-          <span class="text-sm">Modo Iberican</span>
-        </button>
-
-        <!-- Vinilo (Trabajos / Música) -->
-        <a
-          href="/trabajos"
-          class:list={[
-            "p-2 rounded-full transition",
-            isActive("/trabajos") ? "bg-white/10" : "hover:bg-white/10"
-          ]}
-          aria-label="Música"
-          aria-current={isActive("/trabajos") ? "page" : undefined}
-        >
-          <svg class="w-5 h-5 text-white/90" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1.2" opacity="0.55"/>
-            <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.2" opacity="0.35"/>
-            <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.9"/>
-            <circle cx="12" cy="12" r="0.6" fill="black" opacity="0.6"/>
-          </svg>
-        </a>
-
-        <!-- Contacto -->
-        <a
-          href="/contacto"
-          class:list={[
-            "p-2 rounded-full transition",
-            isActive("/contacto") ? "bg-white/10" : "hover:bg-white/10"
-          ]}
-          aria-label="Contacto"
-          aria-current={isActive("/contacto") ? "page" : undefined}
-        >
-          <svg class="w-5 h-5 text-white/90" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-          </svg>
-        </a>
-
-        <!-- Mobile toggle -->
-        <button
-          id="nav-toggle"
-          class="md:hidden p-2 rounded-full hover:bg-white/10 transition text-white/90"
-          aria-label="Abrir menú"
-          type="button"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
+      <!-- Hamburguesa -->
+      <button
+        id="nav-toggle"
+        class="md:hidden p-2 rounded-full hover:bg-white/10 transition text-white"
+        aria-label="Abrir menú"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
   </div>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden hidden bg-black/90 border-b border-white/10 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-6 py-4">
-
-      <!-- Top actions mobile -->
-      <div class="flex items-center gap-2 mb-4">
-        <button
-          id="neon-toggle-mobile"
-          type="button"
-          class="flex-1 inline-flex items-center justify-center gap-2 px-4 h-10 rounded-full bg-white/10 hover:bg-white/15 border border-white/10 text-white/80 transition"
-        >
-          <span aria-hidden="true">🔮</span>
-          <span class="text-sm">Modo Iberican</span>
-        </button>
-
-        <a
-          href="/trabajos"
-          class:list={[
-            "inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 transition",
-            isActive("/trabajos") ? "bg-white/10" : "bg-white/5 hover:bg-white/10"
-          ]}
-          aria-label="Música"
-        >
-          <svg class="w-5 h-5 text-white/90" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1.2" opacity="0.55"/>
-            <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.2" opacity="0.35"/>
-            <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.9"/>
-            <circle cx="12" cy="12" r="0.6" fill="black" opacity="0.6"/>
-          </svg>
-        </a>
-
-        <a
-          href="/contacto"
-          class:list={[
-            "inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 transition",
-            isActive("/contacto") ? "bg-white/10" : "bg-white/5 hover:bg-white/10"
-          ]}
-          aria-label="Contacto"
-        >
-          <svg class="w-5 h-5 text-white/90" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
-      <ul class="flex flex-col gap-2">
+  <!-- Menú Mobile -->
+  <div id="mobile-menu" class="md:hidden hidden bg-black border-t border-white/10">
+    <div class="px-6 py-4">
+      <ul class="flex flex-col gap-3">
         {navItems.map((item) => (
           <li>
             <a
               href={item.href}
               class:list={[
-                "block px-4 py-3 rounded-lg transition",
-                isActive(item.href) ? "bg-white/10 text-white" : "text-white/90 hover:bg-white/10"
+                "block px-4 py-2 rounded-lg text-sm font-semibold uppercase transition",
+                isActive(item.href) 
+                  ? "bg-white/10 text-white"
+                  : "text-white/90 hover:bg-white/5"
               ]}
               aria-current={isActive(item.href) ? "page" : undefined}
             >
@@ -186,31 +151,12 @@ const isActive = (href) => (href === "/" ? path === "/" : path.startsWith(href))
   <script type="module">
     const toggle = document.getElementById('nav-toggle');
     const menu = document.getElementById('mobile-menu');
-
+    
     if (toggle && menu) {
       toggle.addEventListener('click', () => {
         const isHidden = menu.classList.toggle('hidden');
         toggle.setAttribute('aria-expanded', String(!isHidden));
       });
-    }
-
-    const neonDesktop = document.getElementById('neon-toggle');
-    const neonMobile = document.getElementById('neon-toggle-mobile');
-
-    function toggleNeon() {
-      document.body.classList.toggle('neon');
-      playSound('/audio/neon.mp3');
-    }
-
-    if (neonDesktop) neonDesktop.addEventListener('click', toggleNeon);
-    if (neonMobile) neonMobile.addEventListener('click', toggleNeon);
-
-    function playSound(src) {
-      try {
-        const audio = new Audio(src);
-        audio.volume = 0.3;
-        audio.play().catch(() => {});
-      } catch (e) {}
     }
   </script>
 </header>
