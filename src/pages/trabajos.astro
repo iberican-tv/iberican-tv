@@ -32,31 +32,55 @@ import CategoryTags from "../components/CategoryTags.astro";
           Seguir en Instagram
         </a>
 
-        <a href="/sobre"
+        <a href="/iberican"
           class="inline-flex items-center justify-center bg-transparent border border-white/20 hover:border-white text-white/90 py-3 px-6 rounded-lg transition gap-2">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 1.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 8 1.8Z" stroke="currentColor" stroke-width="1.2"/>
             <path d="M8 5.6v4.6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
             <path d="M8 4.2h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
-          Conocer el proyecto
+          Conoce a Iberican
         </a>
       </div>
     </div>
 
     <!-- FILTROS -->
     <div class="pb-6">
-      <div class="mb-4 flex flex-wrap justify-center gap-3">
-        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="all">ALL</button>
-        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="crudo">HARDCORE</button>
-        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="post-industrial">OLD SCHOOL</button>
-        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="futurista">Futurista</button>
-        <button class="btn-primary ver-mas-btn inline-flex items-center gap-2" data-filter="proximamente">NEXT</button>
+      <div class="mb-4 flex flex-wrap justify-center gap-4">
+        <button class="filter-btn active inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase tracking-wider transition-all duration-300" data-filter="all">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          ALL
+        </button>
+        <button class="filter-btn inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase tracking-wider transition-all duration-300" data-filter="crudo">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3l5 10 5-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          HARDCORE
+        </button>
+        <button class="filter-btn inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase tracking-wider transition-all duration-300" data-filter="post-industrial">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 8h12M8 2v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          OLD SCHOOL
+        </button>
+        <button class="filter-btn inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase tracking-wider transition-all duration-300" data-filter="futurista">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          FUTURE
+        </button>
+        <button class="filter-btn inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase tracking-wider transition-all duration-300" data-filter="proximamente">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          NEXT
+        </button>
       </div>
 
       <p class="text-center text-sm text-white/60">
-        Filtra por clima. Si quieres entrar a cuchillo: “Crudo”. Si quieres atmósfera y tensión: “Post-Industrial”.
-        Si quieres exploración: “Futurista”. Si quieres lo que viene: “Próximamente”.
+        ALL para verlo todo. HARDCORE si lo quieres crudo. OLD SCHOOL si eres de los de toda la vida. FUTURE para explorar ritmos innovadores. NEXT para los próximos lanzamientos.
       </p>
     </div>
 
@@ -72,7 +96,7 @@ import CategoryTags from "../components/CategoryTags.astro";
             </div>
           </div>
           <span class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-black/20 text-xs text-white/70 uppercase tracking-wider">
-            Crudo
+            HARDCORE
           </span>
         </div>
 
@@ -118,7 +142,7 @@ import CategoryTags from "../components/CategoryTags.astro";
             </div>
           </div>
           <span class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-black/20 text-xs text-white/70 uppercase tracking-wider">
-            Post-Industrial
+            OLD SCHOOL
           </span>
         </div>
 
@@ -164,7 +188,7 @@ import CategoryTags from "../components/CategoryTags.astro";
             </div>
           </div>
           <span class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-black/20 text-xs text-white/70 uppercase tracking-wider">
-            Futurista
+            FUTURE
           </span>
         </div>
 
@@ -210,7 +234,7 @@ import CategoryTags from "../components/CategoryTags.astro";
             </div>
           </div>
           <span class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-black/20 text-xs text-white/70 uppercase tracking-wider">
-            En marcha
+            NEXT
           </span>
         </div>
 
@@ -283,10 +307,21 @@ import CategoryTags from "../components/CategoryTags.astro";
       btn.addEventListener('click', () => {
         const filter = btn.dataset.filter;
 
+        // Actualizar estado activo de botones
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filtrar tarjetas con animación
         cards.forEach((card) => {
           const cat = card.dataset.category;
           const show = filter === 'all' || cat === filter;
-          card.style.display = show ? '' : 'none';
+          
+          if (show) {
+            card.style.display = '';
+            card.style.animation = 'fadeIn 0.4s ease-in-out';
+          } else {
+            card.style.display = 'none';
+          }
         });
 
         playSound('/audio/click.mp3');

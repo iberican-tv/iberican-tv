@@ -262,9 +262,59 @@
     animation: fall 6s ease-in forwards;
   }
 
-  /* Force cursor none everywhere */
-  .cursor-pointer {
-    cursor: none !important;
+  /* Filter buttons styling */
+  .filter-btn {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(185, 28, 28, 0.5);
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+  }
+
+  .filter-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #b91c1c, #dc2626, #b91c1c);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .filter-btn:hover {
+    color: #dc2626;
+    border-color: rgba(220, 38, 38, 0.8);
+  }
+
+  .filter-btn:hover::before {
+    transform: scaleX(1);
+  }
+
+  .filter-btn.active {
+    background: rgba(185, 28, 28, 0.2);
+    color: #dc2626;
+    border-color: #dc2626;
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.6), inset 0 0 20px rgba(220, 38, 38, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .filter-btn.active::before {
+    transform: scaleX(1);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   a {
