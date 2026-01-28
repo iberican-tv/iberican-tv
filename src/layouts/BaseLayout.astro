@@ -10,7 +10,7 @@ const { title = "Iberican" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link rel="icon" type="image/png" href="/logoarriba_I.png">
+    <link rel="icon" type="image/png" href="/espada_cursor.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Bebas+Neue&family=Oswald:wght@600;800&display=swap" rel="stylesheet">
@@ -44,15 +44,15 @@ const { title = "Iberican" } = Astro.props;
       
       #custom-cursor {
         position: fixed;
-        width: 350px;
-        height: 80px;
+        width: 500px;
+        height: 100px;
         background-image: url('/espada_cursor_inclinada.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: right center;
         pointer-events: none;
         z-index: 9999;
-        transform: translate(-85%, -50%);
+        transform: translate(-88%, -50%);
         display: none;
         animation: sword-glow 2s ease-in-out infinite;
       }
